@@ -48,7 +48,7 @@ public class PrimeNumbersControllerTest {
     @Test
     public void shouldSetBadRequestStatusForBadRequest() throws Exception {
         //GIVEN
-        int number = 1;
+        int number = 0;
 
         //WHEN
         Integer[] primes = target.getPrimes(response, number);

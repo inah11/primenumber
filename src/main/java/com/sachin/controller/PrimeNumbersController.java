@@ -23,7 +23,7 @@ public class PrimeNumbersController {
 
     @RequestMapping("/primes")
     public Integer[] getPrimes(HttpServletResponse response, @RequestParam(value = "until") int maxValue) throws ExecutionException, InterruptedException {
-        if (maxValue < 2) {
+        if (maxValue < 1) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return null;
         }

@@ -2,7 +2,8 @@
 This generates the list of n prime number using Trial Division and Miller Rabin algorithm
 
 # how to use
-This is a maven based spring boot application. It can be accessed using http://localhost:8080/primes
+* This is a maven based spring boot application. It can be accessed using http://localhost:8080/primes
+* http://localhost:8080/primes?until=0 will give a blank screen but in the developer's console the http status 400 Bad Request can be seen
 
 # assumptions
 * There are no performance requirements
