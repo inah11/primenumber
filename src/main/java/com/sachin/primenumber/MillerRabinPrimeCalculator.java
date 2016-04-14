@@ -21,12 +21,18 @@ public class MillerRabinPrimeCalculator implements PrimeCalculator {
 
     @Override
     public boolean isPrime(int number) {
-        if (number == 1 || number % 2 == 0) {
+        if (number == 1) {
             return false;
         }
         if (number == 2) {
             return true;
         }
+
+        if (number % 2 == 0) {
+            return false;
+        }
+
+
         if (cacheOfPrimes.contains(number)) {
             return true;
         }
@@ -54,70 +60,10 @@ public class MillerRabinPrimeCalculator implements PrimeCalculator {
 
     private static int[] getPrimesToTest(int n) {
         if (n >= 2147481234) {
-            return new int[]{2, 3, 5, 7, 11, 13, 17,
-                    593,
-                    599,
-                    601,
-                    607,
-                    613,
-                    617,
-                    619,
-                    631,
-                    641,
-                    1151,
-                    1153,
-                    1163,
-                    1171,
-                    1181,
-                    1187,
-                    1867,
-                    1871,
-                    1873,
-                    1877,
-                    1879,
-                    1889,
-                    1901,
-                    1907,
-                    1913,
-                    1931,
-                    1933,
-                    1949,
-                    1951,
-                    1973,
-                    1979,
-                    1987,
-                    1993};
+            return new int[]{2, 3, 5, 7, 11, 13, 17};
         }
         if (n >= 25326001) {
-            return new int[]{2, 3, 5, 7, 11, 13,
-                    593,
-                    599,
-                    601,
-                    607,
-                    613,
-                    1151,
-                    1153,
-                    1163,
-                    1171,
-                    1181,
-                    1187,
-                    1867,
-                    1871,
-                    1873,
-                    1877,
-                    1879,
-                    1889,
-                    1901,
-                    1907,
-                    1913,
-                    1931,
-                    1933,
-                    1949,
-                    1951,
-                    1973,
-                    1979,
-                    1987,
-                    1993};
+            return new int[]{2, 3, 5, 7, 11, 13};
         }
         if (n >= 1373653) {
             return new int[]{2, 3, 5, 11};

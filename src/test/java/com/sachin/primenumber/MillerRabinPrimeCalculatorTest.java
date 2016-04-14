@@ -89,6 +89,17 @@ public class MillerRabinPrimeCalculatorTest {
     }
 
     @Test
+    public void shouldReturnTrueFor9839FromCache() {
+        //GIVEN
+        int number = 9839;
+        //WHEN
+        target.isPrime(number);
+        boolean isPrime = target.isPrime(number);
+        //THEN
+        assertThat(isPrime, is(true));
+    }
+
+    @Test
     public void shouldReturnFalseFor2147481234() {
         //GIVEN
         int number = 2147481235;

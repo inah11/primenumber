@@ -22,7 +22,9 @@ public class PrimeNumberServiceTest {
     public void setup() {
         PrimeCalculator trialDivisionPrimeCalculator = new TrialDivisionPrimeCalculator();
         PrimeCalculator millerRabinPrimeCalculator = new MillerRabinPrimeCalculator();
-        target = new PrimeNumberService(trialDivisionPrimeCalculator, millerRabinPrimeCalculator);
+        int maxForTrialDivisionAlgo = 1000000;
+        int threadCount = 1;
+        target = new PrimeNumberService(trialDivisionPrimeCalculator, millerRabinPrimeCalculator, maxForTrialDivisionAlgo, threadCount);
     }
 
     @Test

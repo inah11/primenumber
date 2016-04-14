@@ -25,15 +25,19 @@ public class TrialDivisionPrimeCalculator implements PrimeCalculator {
     @Override
     public boolean isPrime(int number) {
 
-        if (number < 2) {
+        if (number == 1) {
             return false;
         }
-        if (cacheOfPrimes.contains(number) || number == 2) {
+        if (number == 2) {
             return true;
         }
         if (number % 2 == 0) {
             return false;
         }
+        if (cacheOfPrimes.contains(number)) {
+            return true;
+        }
+
         int smallerFactor = (int) Math.sqrt(number);
 
         int result = IntStream.rangeClosed(2, smallerFactor)
